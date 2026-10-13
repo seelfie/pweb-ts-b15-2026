@@ -1,7 +1,7 @@
-import { requireLogin, logout } from "./lib/route-guard.js";
+import { requireAdmin, logout } from "./lib/route-guard.js";
 import { getJenisAntrian, getTiket, saveTiket } from "./storage.js";
 function init() {
-    const session = requireLogin();
+    const session = requireAdmin();
     if (!session)
         return;
     const namaUser = document.getElementById("nama-user");

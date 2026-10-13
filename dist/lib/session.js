@@ -28,5 +28,8 @@ export function isAdminLike(role) {
     return role === "admin" || role === "moderator";
 }
 export function homePathFor(role) {
-    return isAdminLike(role) ? "index.html" : "operator.html";
+    if (isAdminLike(role)) {
+        return "index.html";
+    }
+    return "ambil-antrian.html";
 }

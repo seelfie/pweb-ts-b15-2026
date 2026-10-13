@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambil Antrian</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/layar-ambil.css">
+    <script type="module" src="dist/ambil-antrian.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="ambil-antrian.html">
+            <img
+                class="logo"
+                src="images/logo.png"
+                alt="Logo rumah sakit"
+                width="42"
+                height="42"
+            >
+            <div class="brand-text">
+                <h1>Antrian Rumah Sakit</h1>
+                <p>Layanan antrian digital</p>
+            </div>
+        </a>
+
+        
+        <div class="navbar-aksi">
+            <div class="grup-navigasi">
+                <a
+                    class="tautan-nav aktif"
+                    href="ambil-antrian.html"
+                    aria-current="page"
+                >
+                    Ambil Antrian
+                </a>
+                <a class="tautan-nav" href="layar.html">
+                    Layar Antrian
+                </a>
+            </div>
+
+            <button id="btn-logout" type="button">Keluar</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="header">
+            <h2>Ambil Nomor Antrian</h2>
+            <p>Silakan pilih layanan dan prioritas antrian Anda.</p>
+        </header>
+
+        <section class="card">
+            <label for="jenis-antrian">Jenis Layanan</label>
+            <select id="jenis-antrian">
+                <option value="">Memuat jenis layanan...</option>
+            </select>
+
+            <label for="prioritas">Prioritas Antrian</label>
+            <select id="prioritas">
+                <option value="Normal">Normal</option>
+                <option value="Lansia">Lansia</option>
+                <option value="Disabilitas">Disabilitas</option>
+                <option value="VIP">VIP</option>
+            </select>
+
+            <button id="ambil-btn" type="button">
+                Ambil Nomor Antrian
+            </button>
+
+            <div id="hasil-antrian" class="hasil" aria-live="polite">
+                Nomor antrian Anda akan tampil di sini.
+            </div>
+        </section>
+    </main>
+</body>
+</html>

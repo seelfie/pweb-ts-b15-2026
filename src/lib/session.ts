@@ -36,5 +36,9 @@ export function isAdminLike(role: Role): boolean {
 }
 
 export function homePathFor(role: Role): string {
-  return isAdminLike(role) ? "index.html" : "operator.html";
+  if (isAdminLike(role)) {
+  return "index.html";
+  }
+
+  return "ambil-antrian.html";
 }

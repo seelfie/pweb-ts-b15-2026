@@ -3,10 +3,11 @@
     --biru-tua-hover: #0b4f7c;
     --biru-tua-aktif: #083f64;
     --biru-tengah: #1479c0;     
-    --biru-muda: #22a6e9;       
-    --biru-pucat: #eaf5fc;     
-    --biru-pucat-2: #f4f9fd;    
+    --biru-muda: #22a6e9;      
+    --biru-pucat: #eaf5fc;      
+    --biru-pucat-2: #f4f9fd;   
 
+   
     --bg: #f3f8fc;
     --panel: #ffffff;
     --garis: #d6e4ef;
@@ -135,6 +136,38 @@ button:disabled:active {
     border-color: var(--garis);
 }
 
+.tautan-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #b7dcf3;
+    border-radius: var(--radius-kecil);
+    background: var(--biru-pucat);
+    color: var(--biru-tua);
+    font-family: var(--font-judul);
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+    transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s,
+        transform 0.1s;
+}
+
+.tautan-nav:hover {
+    border-color: var(--biru-muda);
+    background: #d9ecf9;
+}
+
+.tautan-nav:active {
+    transform: translateY(1px);
+}
+
+.tautan-nav:focus-visible {
+    outline: none;
+    box-shadow: var(--cincin-fokus);
+}
+
 .layout {
     max-width: 1200px;
     margin: 0 auto;
@@ -176,7 +209,6 @@ button:disabled:active {
     position: absolute;
     inset: 0 0 auto 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--biru-muda), var(--biru-tua));
 }
 
 .kartu-jenis:hover {

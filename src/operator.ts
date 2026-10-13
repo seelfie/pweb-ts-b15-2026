@@ -1,9 +1,9 @@
-import { requireLogin, logout } from "./lib/route-guard.js";
+import { requireAdmin, logout } from "./lib/route-guard.js";
 import { getJenisAntrian, getTiket, saveTiket } from "./storage.js";
 import type { JenisAntrian, Prioritas, Tiket } from "./types/antrian.js";
 
 function init(): void {
-  const session = requireLogin();
+  const session = requireAdmin();
   if (!session) return;
 
   const namaUser = document.getElementById("nama-user") as HTMLSpanElement;
@@ -153,7 +153,6 @@ function init(): void {
   namaUser.textContent = session.firstName;
 
   btnLogout.addEventListener("click", logout);
-
   window.addEventListener("storage", render);
 
   render();

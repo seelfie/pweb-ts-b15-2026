@@ -1,31 +1,33 @@
-import type { Session } from "../types/index.js";
 import { getSession, clearSession, isAdminLike } from "./session.js";
+import type { Session } from "../types/index.js";
 
-function keLogin(): void {
-  window.location.href = "login.html";
+export function requireAuth(): Session | null {
+const session = getSession();
+
+if (session === null) {
+window.location.replace("login.html");
+return null;
 }
 
-export function requireLogin(): Session | null {
-  const session = getSession();
-  if (session === null) {
-    keLogin();
-    return null;
-  }
-  return session;
+return session;
 }
 
 export function requireAdmin(): Session | null {
-  const session = requireLogin();
-  if (session === null) return null;
+const session = requireAuth();
 
-  if (!isAdminLike(session.role)) {
-    keLogin();
-    return null;
-  }
-  return session;
+if (session === null) {
+return null;
+}
+
+if (!isAdminLike(session.role)) {
+window.location.replace("ambil-antrian.html");
+return null;
+}
+
+return session;
 }
 
 export function logout(): void {
-  clearSession();
-  keLogin();
+clearSession();
+window.location.replace("login.html");
 }

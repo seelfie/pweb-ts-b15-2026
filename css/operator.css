@@ -1,11 +1,11 @@
 :root {
-    --biru-tua: #06619a;        /* tombol utama, judul */
+    --biru-tua: #06619a;       
     --biru-tua-hover: #0b4f7c;
     --biru-tua-aktif: #083f64;
-    --biru-tengah: #1479c0;     /* aksen teks */
-    --biru-muda: #22a6e9;       /* dekorasi, fokus (jangan jadi latar teks putih) */
-    --biru-pucat: #eaf5fc;      /* hover, badge */
-    --biru-pucat-2: #f4f9fd;    /* latar blok */
+    --biru-tengah: #1479c0;     
+    --biru-muda: #22a6e9;       
+    --biru-pucat: #eaf5fc;     
+    --biru-pucat-2: #f4f9fd;    
 
     --bg: #f3f8fc;
     --panel: #ffffff;

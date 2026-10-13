@@ -1,12 +1,3 @@
-// index.ts: logika Dashboard Admin
-//
-// Memakai ES module: fungsi dari file lain diambil lewat "import" (perhatikan
-// ekstensi ".js"), dan variabel di file ini tidak bocor ke file lain, jadi
-// pembungkus (() => {...})() tidak diperlukan lagi. Isi halaman dibungkus
-// fungsi init() supaya "return" bisa dipakai kalau guard menolak pengguna.
-
-// Penjaga halaman (cek login/role dan logout) ada di lib/route-guard.ts,
-// yang disusun dari getSession/clearSession/isAdminLike di lib/session.ts.
 import { requireAdmin, logout } from "./lib/route-guard.js";
 import {
   getJenisAntrian,
@@ -21,11 +12,8 @@ import {
 import type { JenisAntrian, Prioritas } from "./types/antrian.js";
 
 function init(): void {
-  // ==========================================================
-  // 1. GUARD: hanya admin/moderator yang boleh masuk
-  // ==========================================================
   const session = requireAdmin();
-  if (!session) return; // sudah di-redirect ke login.html, hentikan semuanya
+  if (!session) return; 
 
   const namaUser = document.getElementById("nama-user") as HTMLSpanElement;
   const roleUser = document.getElementById("role-user") as HTMLSpanElement;
@@ -227,8 +215,6 @@ function init(): void {
     renderSemua();
   }
 
-  // Keputusan desain: menghapus jenis juga menghapus tiket dan counter-nya.
-  // (Soal tidak menjelaskan hal ini, jadi pastikan disepakati dengan tim.)
   function hapusJenis(id: string): void {
     const j = getJenisAntrian().find((x) => x.id === id);
     if (!j) return;

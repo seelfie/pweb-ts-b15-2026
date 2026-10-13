@@ -1,0 +1,487 @@
+:root {
+    --biru-tua: #06619a;        /* tombol utama, judul */
+    --biru-tua-hover: #0b4f7c;
+    --biru-tua-aktif: #083f64;
+    --biru-tengah: #1479c0;     /* aksen teks */
+    --biru-muda: #22a6e9;       /* dekorasi, fokus (jangan jadi latar teks putih) */
+    --biru-pucat: #eaf5fc;      /* hover, badge */
+    --biru-pucat-2: #f4f9fd;    /* latar baris */
+
+    --bg: #f3f8fc;
+    --panel: #ffffff;
+    --garis: #d6e4ef;
+    --garis-lembut: #e3eef7;
+    --teks: #0b2540;
+    --redup: #5b7089;
+
+    --bahaya: #c62828;
+    --bahaya-pucat: #fdecec;
+    --bahaya-garis: #f3c4c4;
+    --sukses: #15803d;
+    --sukses-pucat: #e8f6ee;
+    --sukses-garis: #bfe5cd;
+
+    --radius: 16px;
+    --radius-kecil: 10px;
+    --bayangan: 0 1px 2px rgba(6, 97, 154, 0.06), 0 8px 24px rgba(6, 97, 154, 0.08);
+    --cincin-fokus: 0 0 0 3px rgba(34, 166, 233, 0.35);
+
+    --font-judul: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --font-isi: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--biru-pucat) 0, var(--bg) 260px) no-repeat, var(--bg);
+    color: var(--teks);
+    font-family: var(--font-isi);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0.85rem max(1.5rem, calc((100% - 1200px) / 2));
+    background: var(--panel);
+    border-bottom: 1px solid var(--garis);
+    box-shadow: 0 2px 12px rgba(6, 97, 154, 0.06);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.logo {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+}
+
+.navbar-title h1 {
+    margin: 0;
+    font-family: var(--font-judul);
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--biru-tua);
+}
+
+.subtitle {
+    margin: 0.1rem 0 0;
+    font-size: 0.78rem;
+    color: var(--redup);
+}
+
+.navbar-aksi {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.info-user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 0.85rem;
+}
+
+#nama-user {
+    font-weight: 600;
+}
+
+#role-user {
+    padding: 0.1rem 0.65rem;
+    border-radius: 999px;
+    background: var(--biru-pucat);
+    color: var(--biru-tua);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--garis);
+    border-radius: var(--radius-kecil);
+    background: var(--panel);
+    color: var(--biru-tua);
+    font-family: var(--font-judul);
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s,
+        box-shadow 0.15s, transform 0.1s;
+}
+
+button:hover {
+    background: var(--biru-pucat);
+    border-color: var(--biru-muda);
+}
+
+button:active {
+    background: #d9ecf9;
+    transform: translateY(1px);
+}
+
+button:focus-visible {
+    outline: none;
+    box-shadow: var(--cincin-fokus);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    background: var(--panel);
+    border-color: var(--garis);
+}
+
+button:disabled:active {
+    transform: none;
+}
+
+#btn-tambah,
+#btn-terbitkan {
+    border-color: var(--biru-tua);
+    background: var(--biru-tua);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(6, 97, 154, 0.28);
+}
+
+#btn-tambah:hover,
+#btn-terbitkan:hover {
+    border-color: var(--biru-tua-hover);
+    background: var(--biru-tua-hover);
+    box-shadow: 0 4px 12px rgba(6, 97, 154, 0.35);
+}
+
+#btn-tambah:active,
+#btn-terbitkan:active {
+    border-color: var(--biru-tua-aktif);
+    background: var(--biru-tua-aktif);
+}
+
+#btn-reset,
+.btn-hapus {
+    border-color: var(--bahaya-garis);
+    color: var(--bahaya);
+}
+
+#btn-reset:hover,
+.btn-hapus:hover {
+    border-color: var(--bahaya);
+    background: var(--bahaya-pucat);
+}
+
+#btn-reset:active,
+.btn-hapus:active {
+    background: #fbd9d9;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--redup);
+}
+
+input,
+select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--garis);
+    border-radius: var(--radius-kecil);
+    background: #fff;
+    color: var(--teks);
+    font-family: var(--font-isi);
+    font-size: 0.9rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input::placeholder {
+    color: #8aa0b5;
+}
+
+input:hover,
+select:hover {
+    border-color: #b6cfe2;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--biru-tengah);
+    box-shadow: var(--cincin-fokus);
+}
+
+#input-kode {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#form-jenis {
+    display: grid;
+    grid-template-columns: 5rem 1fr auto;
+    gap: 0.75rem;
+    align-items: end;
+}
+
+#form-tiket {
+    display: grid;
+    grid-template-columns: 1fr 9rem auto;
+    gap: 0.75rem;
+    align-items: end;
+}
+
+.pesan {
+    margin: 0.8rem 0 0;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-kecil);
+    font-size: 0.82rem;
+}
+
+.pesan:empty {
+    display: none;
+}
+
+.pesan.error {
+    border-color: var(--bahaya-garis);
+    background: var(--bahaya-pucat);
+    color: #a31f1f;
+}
+
+.pesan.sukses {
+    border-color: var(--sukses-garis);
+    background: var(--sukses-pucat);
+    color: var(--sukses);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem 2.5rem;
+}
+
+.panel {
+    padding: 1.4rem;
+    border: 1px solid var(--garis);
+    border-radius: var(--radius);
+    background: var(--panel);
+    box-shadow: var(--bayangan);
+}
+
+.panel h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 0 1.1rem;
+    font-family: var(--font-judul);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--teks);
+}
+
+.panel h2::before {
+    content: "";
+    width: 4px;
+    height: 1.15em;
+    border-radius: 2px;
+    background: linear-gradient(180deg, var(--biru-muda), var(--biru-tua));
+}
+
+#daftar-jenis {
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item-jenis {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0.6rem;
+    border-bottom: 1px solid var(--garis-lembut);
+    border-radius: var(--radius-kecil);
+    transition: background-color 0.15s;
+}
+
+.item-jenis:hover {
+    background: var(--biru-pucat-2);
+}
+
+.item-jenis:last-child {
+    border-bottom: none;
+}
+
+.item-jenis.nonaktif {
+    opacity: 0.55;
+}
+
+.info-jenis {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.45rem;
+}
+
+.nama-jenis {
+    font-family: var(--font-judul);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.kode-jenis {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--biru-tengah);
+}
+
+.jumlah-menunggu {
+    flex-basis: 100%;
+    font-size: 0.75rem;
+    color: var(--redup);
+}
+
+.aksi-jenis {
+    display: flex;
+    flex-shrink: 0;
+    gap: 0.4rem;
+}
+
+.aksi-jenis button {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.72rem;
+}
+
+/* ==========================================================
+   7. DAFTAR TIKET
+   ========================================================== */
+#daftar-tiket {
+    margin-top: 1.1rem;
+}
+
+.grup-tiket {
+    margin-bottom: 1.1rem;
+}
+
+.judul-grup {
+    margin: 0 0 0.45rem;
+    font-family: var(--font-judul);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--biru-tua);
+}
+
+.grup-tiket ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item-tiket {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid var(--garis-lembut);
+    border-radius: var(--radius-kecil);
+    background: var(--biru-pucat-2);
+    font-size: 0.85rem;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+.item-tiket:hover {
+    border-color: #c5ddee;
+    background: var(--biru-pucat);
+}
+
+.label-tiket {
+    min-width: 3.6rem;
+    font-family: var(--font-judul);
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--teks);
+}
+
+.badge-prioritas,
+.badge-status {
+    padding: 0.12rem 0.6rem;
+    border: 1px solid var(--garis);
+    border-radius: 999px;
+    background: #fff;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--redup);
+}
+
+.badge-status.status-menunggu  { background: #eef2f6; border-color: #dbe3ec; color: #475569; }
+.badge-status.status-dipanggil { background: #e1f1fb; border-color: #b7dcf3; color: var(--biru-tua); }
+.badge-status.status-selesai   { background: var(--sukses-pucat); border-color: var(--sukses-garis); color: var(--sukses); }
+.badge-status.status-dilewati  { background: var(--bahaya-pucat); border-color: var(--bahaya-garis); color: #b91c1c; }
+
+.badge-prioritas.prioritas-lansia      { background: #fff4e0; border-color: #f6dba8; color: #9a5b00; }
+.badge-prioritas.prioritas-disabilitas { background: #ede9fe; border-color: #ddd6fe; color: #6d28d9; }
+.badge-prioritas.prioritas-vip         { background: #fde7f3; border-color: #fbcfe8; color: #be185d; }
+
+@media (max-width: 800px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    #form-jenis,
+    #form-tiket {
+        grid-template-columns: 1fr;
+    }
+
+    .item-jenis {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+
+    button:active {
+        transform: none;
+    }
+}

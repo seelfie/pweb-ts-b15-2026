@@ -10,5 +10,5 @@
     "noUncheckedIndexedAccess": true,
     "skipLibCheck": true
   },
-  "include": ["src"]
+  "include": ["src", "src/types/antrian.ts"]
 }

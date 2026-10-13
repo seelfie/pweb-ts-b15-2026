@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Panel Operator</title>
+        <link rel="icon" type="image/png" href="images/logo.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/operator.css">
+        <script type="module" src="dist/operator.js" defer></script>
+    </head>
+
+    <body>
+        <header class="navbar">
+            <div class="brand">
+                <img class="logo" src="images/logo.png" alt="Logo rumah sakit" width="46" height="46">
+                <h1>Panel Operator</h1>
+            </div>
+
+            <div class="navbar-aksi">
+                <div class="info-user">
+                    <span id="nama-user"></span>
+                </div>
+                <button id="btn-logout" type="button">Keluar</button>
+            </div>
+        </header>
+
+        <main class="layout">
+            <p id="pesan-kosong" class="pesan" hidden>Belum ada jenis antrian.</p>
+            <div id="daftar-kartu" class="grid-kartu"></div>
+        </main>
+    </body>
+</html>

@@ -11,7 +11,7 @@
 
 body {
   font-family: "Inter", system-ui, sans-serif;
-  background-color: #f4f4f4;
+  background: radial-gradient(circle,#edebe9, #1479c0);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,17 +21,25 @@ body {
 
 .login-container {
   background-color: #ffffff;
-  width: 350px;
+  width: 550px;
   max-width: 92vw;
   padding: 30px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
 }
 
+.login-container h1 {
+   font-size: 36px;
+   color: #083f64;
+   margin: 0 0 10px 0;
+   text-align: center;
+}
+
 .login-container h2 {
   font-size: 28px;
   color: #233864;
   margin: 0 0 20px 0;
+  text-align: center;
 }
 
 .error-message {
@@ -62,13 +70,13 @@ body {
 
 .form-group input:focus {
   outline: none;
-  border-color: #070e40;
+  border-color: #083f64;
 }
 
 button {
   width: 100%;
   padding: 12px;
-  background-color: #242a55;
+  background-color: #1479c0;
   color: #ffffff;
   border: none;
   font-size: 16px;

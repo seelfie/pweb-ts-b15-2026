@@ -31,14 +31,7 @@ body {
 .login-container h2 {
   font-size: 28px;
   color: #233864;
-  margin: 0 0 10px 0;
-}
-
-.login-container p {
-  font-size: 14px;
-  color: #666666;
-  margin: 0 0 25px 0;
-  line-height: 1.5;
+  margin: 0 0 20px 0;
 }
 
 .error-message {

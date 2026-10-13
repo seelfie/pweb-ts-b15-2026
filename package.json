@@ -1,0 +1,13 @@
+{
+  "name": "pweb-ts-b15-2026",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
